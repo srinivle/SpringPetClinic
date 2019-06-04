@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringPetClinicWeb
+Implementation-Version: 0.0.2-SNAPSHOT
+Built-By: Andrei Cazaceanu
+Implementation-Vendor-Id: com.learning
+Build-Jdk: 1.8.0_211
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/PetClinic/SpringPetClinicWeb
+Created-By: Maven Integration for Eclipse
+
