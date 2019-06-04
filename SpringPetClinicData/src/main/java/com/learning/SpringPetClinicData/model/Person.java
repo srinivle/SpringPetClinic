@@ -1,6 +1,10 @@
 package com.learning.SpringPetClinicData.model;
 
-public class Person {
+public class Person extends BaseEntity {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8445072155190840086L;
 	private String firstName;
 	private String lastName;
 	

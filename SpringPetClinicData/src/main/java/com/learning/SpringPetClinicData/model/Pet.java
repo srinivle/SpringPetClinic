@@ -2,8 +2,12 @@ package com.learning.SpringPetClinicData.model;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends BaseEntity {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8817443727586663778L;
 	private PetType petType;
 	private Owner owner;
 	private LocalDate birthdate;
