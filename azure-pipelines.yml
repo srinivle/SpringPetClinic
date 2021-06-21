@@ -9,6 +9,14 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+jobs:  
+- deployment: VMDeploy
+  displayName: dev
+  environment:
+    name: dev
+    resourceType: VirtualMachine
+    tags: dev
+  strategy:
 steps:
 - task: Maven@3
   inputs:
@@ -20,3 +28,4 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
