@@ -9,14 +9,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-jobs:  
-- deployment: VMDeploy
-  displayName: dev
-  environment:
-    name: dev
-    resourceType: VirtualMachine
-    tags: dev
-  strategy:
 steps:
 - task: Maven@3
   inputs:
