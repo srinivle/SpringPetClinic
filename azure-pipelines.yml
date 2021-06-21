@@ -9,21 +9,24 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-- job: Build
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: Build
     displayName: Build Maven Project
-    steps:
-    - task: Maven@3
-      displayName:'Maven Package'
-      inputs:
-        mavenPomFile: 'pom.xml'
-    - task: CopyFiles@2
-      displayName: 'Copy Files to artifact staging directory'
-      inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: '**/target/*.?(war|jar)'
-        TargetFolder: $(Build.ArtifactStagingDirectory)
-    - upload: $(Build.ArtifactStagingDirectory)
-      artifact: drop
+      steps:
+      - task: Maven@3
+        displayName:'Maven Package'
+        inputs:
+          mavenPomFile: 'pom.xml'
+      - task: CopyFiles@2
+        displayName: 'Copy Files to artifact staging directory'
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          Contents: '**/target/*.?(war|jar)'
+          TargetFolder: $(Build.ArtifactStagingDirectory)
+      - upload: $(Build.ArtifactStagingDirectory)
+        artifact: drop
 
 jobs:  
 - deployment: VMDeploy
